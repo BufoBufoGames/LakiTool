@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>LakiTool GIF Generator</title>
+		<meta name="Author" content="Nathan Dobby - 2022">
+		<meta charset="utf-8">
+		<!link rel="stylesheet" href="../webgl.css" type="text/css">
+		<style>
+			/* remove the border */
+			body {
+				margin: auto;
+				border: 0;
+				background-color: DarkGrey;
+				text-align: center;
+				justify-content: center;
+			}
+			h1 {
+				text-align: center;
+			}
+			input {
+				box-sizing: border-box;
+				/*width: auto;*/
+			}
+			/*textarea {
+				resize: none;
+			}*/
+			.inputBox {
+				position: fixed;
+				text-align: left;
+				margin-left: 5px;
+			}
+			.labelText {
+				font-family:ReverseFont;
+				font-size:16px;
+				/*border: 1px solid blue;*/
+				width: auto;
+				right: 50%;
+				position: absolute;
+				text-align: right;
+				margin-right: 5px;
+			}
+			#inputArea {
+				/*border: 1px solid red;*/
+				position: fixed;
+				margin: auto;
+				width: 100%;
+			}
+			#footer {
+				position: fixed;
+				margin: auto;
+				bottom: 0;
+				width: 100%;
+				text-align: center;
+				justify-content: center;
+			}
+			@font-face {
+				font-family: 'ReverseFont';
+				src: url('LakiToolFont.woff') format("woff");
+			}
+			.preloadFont {
+				font-family: ReverseFont;
+				font-size: 14;
+			}
+		</style>
+		<script type="text/javascript" src="jsgif/LZWEncoder.js"></script>
+		<script type="text/javascript" src="jsgif/NeuQuant.js"></script>
+		<script type="text/javascript" src="jsgif/GIFEncoder.js"></script>
+		<script type="text/javascript" src="LakiTool.js"></script>
+	</head>
+
+	<body>
+		<h1 style="font-family:ReverseFont;font-size:32px;font-style:bold;">LakiTool GIF Generator</h1>
+		<div id="inputArea">
+			<label class="labelText" for="text">Text to display:</label>
+			<input id="text" class="inputBox" type="text" name="text" value="REVERSE">
+			<!--textarea id="text" name="text" rows="1" cols="32">REVERSE</textarea-->
+			<br/>
+			<br/>
+			<label class="labelText" for="horizontalScale">Horizontal scale of text (0-10):</label>
+			<input id="horizontalScale" class="inputBox" type="number" name="horizontalScale" min="0" max="10" step="0.1" value="1">
+		</div>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<label for="previewCanvas" style="font-family:ReverseFont;font-size:16px;">Preview:</label>
+		<canvas id="previewCanvas" width="70" height="50" style="display:block;margin:auto;"></canvas>
+		<br/>
+		<input id="generate" type="submit" value="Generate GIF"/>
+		<br/>
+		<br/>
+		<label for="displayImage" style="font-family:ReverseFont;font-size:16px;">GIF:</label>
+		<br/>
+		<img id="displayImage" alt="Your GIF here" width="70" height="50"/>
+		<br/>
+		<input id="download" type="submit" value="Download GIF"/>
+		<div id="footer">
+			<a href="https://bufobufogames.itch.io/"><img src="toad_logo_cga.png" alt="BufoBufo Logo" width="64" height="64"><a/>
+			<p style="font-family:ReverseFont;font-size:8px;">2022 - <a href="https://bufobufogames.itch.io/">BufoBufo<a/></p>
+			<p style="font-family:ReverseFont;font-size:8px;">Javascript GIF Encoding provided by <a href="https://github.com/antimatter15/jsgif">jsgif<a/></p>
+		</div>
+	</body>
+</html>
