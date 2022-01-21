@@ -25,7 +25,6 @@ var tilesetURL = "lakitu_blank_mk64.png";
 
 // Load callbacks
 window.onload = pageLoadedCallback;
-//window.addEventListener('load', pageLoadedCallback, false);
 
 var onError = function() { resourcesLoadedCallback(false); }
 var onLoad = function() { resourcesLoadedCallback(true); }
@@ -149,9 +148,8 @@ function generateAnimation(previewOnly)
 	var previewContext = previewCanvas.getContext('2d');
 	
 	previewContext.fillStyle = 'rgba(0, 0, 0, 1.0)';
-	//context.fillStyle = 'rgb(255,255,255)';
 	previewContext.fillRect(0, 0, previewCanvas.width, previewCanvas.height); // GIF doesn't support a transparent background
-	//context.clearRect(0, 0, canvas.width, canvas.height);
+	
 	previewContext.font = 'bold 14px ReverseFont';
 	previewContext.fillStyle = 'rgba(255, 107, 140, 1.0)';
 	previewContext.textAlign = 'center';
@@ -179,7 +177,6 @@ function generateAnimation(previewOnly)
 		{
 			previewContext.fillStyle = 'rgba(0, 0, 0, 1.0)';
 			previewContext.fillRect(0, 0, previewCanvas.width, previewCanvas.height);
-			//context.clearRect(0, 0, canvas.width, canvas.height);
 			
 			// Draw the sprite for this frame
 			previewContext.drawImage(tileset, ((frameNo % 4) * spriteWidth), (Math.floor(frameNo / 4) * spriteHeight), spriteWidth, spriteHeight, 0, 0, spriteWidth, spriteHeight);
@@ -207,7 +204,6 @@ function generateAnimation(previewOnly)
 		{
 			previewContext.fillStyle = 'rgba(0, 0, 0, 1.0)';
 			previewContext.fillRect(0, 0, previewCanvas.width, previewCanvas.height);
-			//context.clearRect(0, 0, canvas.width, canvas.height);
 			
 			// Draw the sprite for this frame
 			previewContext.drawImage(tileset, ((frameNo % 4) * spriteWidth), (Math.floor(frameNo / 4) * spriteHeight), spriteWidth, spriteHeight, 0, 0, spriteWidth, spriteHeight);
